@@ -11,8 +11,7 @@
 		<title>Bridgeport Rod and Gun</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel='stylesheet'>
 		<!-- Custom fonts for this template -->
 		<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -82,7 +81,7 @@
 						<h2 class="section-heading text-white">Dedicated to Conservation</h2>
 						<hr class="light my-4">
 						<p class="text-faded mb-4">Founded in 1950 and dedicated to conservation, the Bridgeport Rod and Gun Club is still one of the best clubs in the Waterloo Region. Our facilities include Trap and Skeet fields, Handgun, Rifle and Archery Ranges, three Baseball Diamonds (two with night lighting), and both indoor and outdoor seasonal Horse Shoes Pits. Card games and Darts can also be enjoyed in our clubhouse, where refreshments and food are available. Other activities include an annual Conservation Dinner, Fish Fry and Golf Tournament just to mention a few.</p>
-						<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Become a Member</a>
+						<a class="btn btn-light btn-xl js-scroll-trigger" href="#membership">Become a Member</a>
 					</div>
 				</div>
 			</div>
@@ -167,41 +166,40 @@
 			<div class='container-fluid no-gutters mt-4 p-0 bg-dark'>
 				<div class='container no-gutters p-0 mx-auto bg-black'>
 					<div id="carouselControls" class="carousel slide" data-ride="carousel">
-  						<div class="my-auto carousel-inner">
+  					<div class="my-auto carousel-inner persist">
+							<?php
 
-<?php
+							$pictures = scandir('img/gallery/');
 
-$pictures = scandir('img/gallery/');
+							// remove the back directories from the list.
+							$pictures = array_diff($pictures, array('.', '..'));
 
-// remove the back directories from the list.
-$pictures = array_diff($pictures, array('.', '..'));
+							$i = 0;
 
-$i = 0;
-
-foreach ($pictures as $pic) {
-	$active = '';
-	if ($i == 0) {
-		$active = 'active';
-	}
-	echo <<<__EOL
-    						<div class="item carousel-item $active">
-      							<img class="d-block w-100 mx-auto" style='height: 900px !important; width: auto !important;' src='img/gallery/$pic' alt="$pic">
-    						</div>
+							foreach ($pictures as $pic) {
+								$active = '';
+								if ($i == 0) {
+									$active = 'active';
+								}
+								echo <<<__EOL
+															<div class="item carousel-item $active">
+																	<img class="d-block w-100 mx-auto" style='height: 900px !important; width: auto !important;' src='img/gallery/$pic' alt="$pic">
+															</div>
 __EOL;
-	$i ++;
-}
-?>
+								$i ++;
+							}
+							?>
 						</div>
 
 						<!-- CONTROLS -->
 						<a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
     						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
     						<span class="sr-only">Previous</span>
-  						</a>
-  						<a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
-    						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-    						<span class="sr-only">Next</span>
-  						</a>
+  					</a>
+  					<a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+    					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    					<span class="sr-only">Next</span>
+  					</a>
 					</div>
 				</div>
 			</div>
@@ -216,8 +214,18 @@ __EOL;
 				<hr class='my-4'>
 
 				<h4>Please note that all shooting must be supervised by a club approved <b>Range Safety Officer</b></h4>
-				<p></p>
+				<p>
+					Bridgeport Rod and Gun offers two excellent ranges on the grounds.
+					For paper targets, we offer a 25 yard handgun and pistol range, and a 100 yard rifle range.
+					If clay is more to your liking, Trap and Skeet areas are available, and members shoot Tuesdays and Sundays regularly.
+					Please note that due to noise considerations for our neighbours, calibre for all paper-target ranges is restricted to .22lr chambered firearms only.
+				</p>
+				<!--
 				<a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Range Calendar</a>
+			-->
+				<hr class='my-4'>
+			<iframe src="https://calendar.google.com/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=juliansovernigo%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FToronto"
+				style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 			</div>
 		</section>
 
@@ -232,12 +240,20 @@ __EOL;
 						<p class="text-faded mb-4">Becoming a member at Bridgeport Rod and Gun club is a simple process.  For most memberships, a valid Possession/Acquisition License (PAL) is needed. A link to our membership form can be found below. There are 5 steps to becoming a member.</p>
 						<h4>Steps to become a member</h4>
 						<div class='text-left' class='text-faded mb-4'>
-							<strong>1.  </strong>Download and fill out the apllication form.  Provided is a fillable PDF, which can be filled either electronically or using a pen.<br />
-<p>
-								<strong>2.  </strong>Bring your completed membership application to a board meeting on the first Tuesday of the month.  Note that to attend the meethings, you should arrive before 7:30pm.  If attendance of a meeting is impossible for you, you will need to obtain a sponsorship signature from two (2) members, or one (1) director, and drop off the completed application any time the club is open (weekdays 6pm-9pm, or event weekends).<br />
-								<strong>3.  </strong>You will need to attend a club orientation course, which will occur after any board meeting.<br />
-								<strong>4.  </strong>Every new member, regardless of skill or experience, must complete 3 probationary shoots and 4 hours of voluntary labour. The shoots must be completed on <i>each range</i>, the final of the three being a supervised shoot where your range safety will be evaluated.  This means you need one shoot on each of the trap/skeet, handgun, and rifle ranges.  Please note that only one signature may be obtained per day. <br />
-								<strong>5.  </strong>Once all four signatures have been obtained, you must drop off the card on any night where the clubhouse is staffed to the bartender, who will give you your full membership card.
+							<p class="text-faded mb-4">
+								<strong class="text-white">1.  </strong>Download and fill out the apllication form.  Provided is a fillable PDF, which can be filled either electronically or using a pen.<br />
+							</p>
+							<p class='text-faded mb-4'>
+								<strong class="text-white">2.  </strong>Bring your completed membership application to a board meeting on the first Tuesday of the month.  Note that to attend the meethings, you should arrive before 7:30pm.  If attendance of a meeting is impossible for you, you will need to obtain a sponsorship signature from two (2) members, or one (1) director, and drop off the completed application any time the club is open (weekdays 6pm-9pm, or event weekends).<br />
+							</p>
+							<p class='text-faded mb-4'>
+								<strong class="text-white">3.  </strong>You will need to attend a club orientation course, which will occur after any board meeting.<br />
+							</p>
+							<p class='text-faded mb-4'>
+								<strong class="text-white">4.  </strong>Every new member, regardless of skill or experience, must complete 3 probationary shoots and 4 hours of voluntary labour. The shoots must be completed on <i>each range</i>, the final of the three being a supervised shoot where your range safety will be evaluated.  This means you need one shoot on each of the trap/skeet, handgun, and rifle ranges.  Please note that only one signature may be obtained per day. <br />
+							</p>
+							<p class='text-faded mb-4'>
+								<strong class="text-white">5.  </strong>Once all four signatures have been obtained, you must drop off the card on any night where the clubhouse is staffed to the bartender, who will give you your full membership card.
 							</p>
 						</div>
 						<a class="btn btn-light btn-xl js-scroll-trigger" href="http://bit.ly/BRGApplicationFillable">Download Membership Form</a>
@@ -273,16 +289,17 @@ __EOL;
 		</section>
 
 		<!-- Bootstrap core JavaScript -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><!-- Plugin JavaScript -->
 
-		<!-- Plugin JavaScript -->
 		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 		<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
 		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 		<!-- Custom scripts for this template -->
-		<script src="js/creative.min.js"></script>
+		<script src="js/creative.js"></script>
 
 
 	</body>
